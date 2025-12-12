@@ -23,3 +23,37 @@ This guide covers:
 Apply the official Kubernetes Dashboard manifest:
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+
+This command installs:
+
+Kubernetes Dashboard UI
+
+Dashboard backend components
+
+Metrics scraper
+
+Required RBAC roles & services
+
+📌 2. Create Admin Service Account (Full Cluster Access)
+
+Create dashboard-admin.yaml:
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: dashboard-admin-user
+  namespace: kubernetes-dashboard
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: dashboard-admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: dashboard-admin-user
+  namespace: kubernetes-dashboard
+
+
