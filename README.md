@@ -1,5 +1,4 @@
 
-READY-TO-USE README.md
 # Kubernetes Dashboard Setup Guide
 
 A clean, step-by-step guide to installing and accessing the Kubernetes Dashboard with a secure Service Account and token-based authentication.
@@ -8,14 +7,14 @@ A clean, step-by-step guide to installing and accessing the Kubernetes Dashboard
 
 ## 🚀 Overview
 
-The **Kubernetes Dashboard** is a web UI for managing and monitoring Kubernetes clusters.  
+The **Kubernetes Dashboard** is a web UI for managing and monitoring Kubernetes clusters.
 This guide includes:
 
-- Installing the Dashboard  
-- Creating an admin Service Account  
-- Generating an access token  
-- Logging into the Dashboard  
-- Adding your own screenshot  
+- Installing the Dashboard
+- Creating an admin Service Account
+- Generating an access token
+- Logging into the Dashboard
+- Adding your own screenshot
 
 ---
 
@@ -50,11 +49,6 @@ subjects:
 - kind: ServiceAccount
   name: dashboard-admin-user
   namespace: kubernetes-dashboard
-
-
-Apply it:
-
-kubectl apply -f dashboard-admin.yaml
 
 ---
 
